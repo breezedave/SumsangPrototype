@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="/index.css" rel="stylesheet">
+    </head>
+    <body>
+        <img class="frame" src="./Assets/pixel.png" />
+        <div id="root" >
+            <div id="popup" class="hidden">
+                <div id="close">X</div>
+                <div id="ovenName"></div>
+                <div id="heaterName"></div>
+                <div id="autoOff"></div>
+            </div>
+            <div class="splash visible">
+                <div class="logo"></div>
+                <p>We make your food warm</p>
+            </div>
+            <div class="chooseOven" >
+                <p>Please make sure your oven and device are connected to the same WiFi network</p>
+                <div class="controls">
+                    <p>Please select the oven you want to control</p>
+                    <ul class="ovens">
+                        <li>
+                            <button  data-val="oven1" id="selOven1">Oven 1 - Kitchen</button>
+                        </li>
+                        <li>
+                            <button  data-val="oven2" id="selOven2">Oven 2 - Lounge</button>
+                        </li>
+                        <li>
+                            <button  data-val="oven3" id="selOven3">Oven 3 - Bathroom</button>
+                        </li>
+                        <li>
+                            <button data-val="allTimers" id="seeTimers">See all timers</button>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="ovenMain">
+                <button class="home"></button>
+                <h1 id="ovenMainTitle"></h1>
+                <p>Your available heating options</p>
+                <ul>
+                    <li data-val="tlh" class="tlh off">
+                        <span>Top Left Hob</span>
+                        <span class="val">0</span>
+                    </li>
+                    <li data-val="trh"  class="trh off">
+                        <span>Top Right Hob</span>
+                        <span class="val">0</span>
+                    </li>
+                    <li  data-val="blh" class="blh off">
+                        <span>Bottom Left Hob</span>
+                        <span class="val">0</span>
+                    </li>
+                    <li  data-val="brh" class="brh on">
+                        <span>Bottom Right Hob</span>
+                        <span class="val">5</span>
+                    </li>
+                    <li  data-val="grill" class="grill on">
+                        <span>Grill</span>
+                        <span class="val">ON</span>
+                    </li>
+                    <li  data-val="oven" class="oven on">
+                        <span>Oven</span>
+                        <span class="val">230°c</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="ovenHeater">
+                <button class="home"></button>
+                <h1 id="ovenHeaterTitle"></h1>
+                <video src="./Assets/grill.mp4" autoplay muted loop></video>
+                <div class="temps">
+                    <span>Current Temperature</span>
+                    <span class="heaterVal"></span>
+                </div>
+                <div class="temps">
+                    <span>Target Temperature</span>
+                    <span class="heaterTargetVal"></span>
+                </div>
+                <div class="sliderHold">
+                    <div class="sliderObjBg"></div>
+                    <div class="sliderObj"></div>
+                </div>
+                <div class="timerTitle">Timer</div>
+                <div class="time">00:00:00</div>
+                <div class="addSecs">
+                    <button data-val="10" class="addTime">+10s</button>
+                    <button data-val="30" class="addTime">+30s</button>
+                    <button data-val="60" class="addTime">+1m</button>
+                    <button data-val="300" class="addTime">+5m</button>
+                    <button data-val="600" class="addTime">+10m</button>
+                </div>
+                <div class="timerControl">
+                    <button class="startAlarm">Start Alarm</button>
+                    <button class="startAutoOff">Start Auto Off</button>
+                    <button class="cancelTimers">Cancel</button>
+                </div>
+                <button class="ovenDoor"></button>
+            </div>
+            <div class="allTimers">
+                <button class="home"></button>
+                <h1>All Timers</h1>
+                <ul>
+                </ul>
+            </div>
+        </div>
+
+        <script src="/index.js" type="text/javascript"></script>
+    </body>
+</html>

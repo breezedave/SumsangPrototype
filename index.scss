@@ -1,0 +1,354 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */
+}
+
+.frame {
+    height: 900px;
+    width: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ul {
+    padding: 0;
+    margin-top: 30px
+}
+
+li {
+    list-style: none;
+}
+
+#root {
+    min-height: 764px;
+    max-height: 764px;
+    background: #333;
+    width: 346px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%) translate(0px, 13px);
+    border-radius: 35px;
+    overflow: hidden;
+    padding: 20px;
+
+    > div {
+        display: none;
+        min-width: 346px;
+        min-height: 764px;
+
+        &.visible { display: block;}
+
+        &#popup {
+            min-height: 400px;
+            max-height: 400px;
+            width: 300px;
+            background: #cbcbcb;
+            border-radius: 20px;
+            border: 2px solid #333;
+            position: absolute;
+            transform: translate(-50%, -50%) translate(0px, 13px);
+            overflow: hidden;
+            z-index: 3;
+            top: 50%;
+            left: 50%;
+        }
+
+        #close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            background: red;
+            width: 40px;
+            font-weight: 700;
+            border-radius: 25%;
+            font-size: 30px;
+        }
+
+        #ovenName {
+            margin-top: 100px;
+            font-size: 40px;
+            color: #333;
+        }
+
+        #heaterName {
+            font-size: 30px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        #autoOff {
+            width: 75%;
+            margin: 0 auto;
+            color: #333;
+            font-size: 24px;
+        }
+    }
+}
+
+.home {
+    width: 40px;
+    height: 40px;
+    background: #888 url("./Assets/home.png") no-repeat center center;
+    background-size: 90%;
+    border-radius: 5px;
+    border: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.splash {
+    .logo {
+        min-width: 300px;
+        max-width: 300px;
+        margin: 200px auto 0;
+        min-height: 177px;
+        background: transparent url("./Assets/sumsang.png") no-repeat;
+        background-position: center center;
+        background-size: 100%;
+    }
+}
+
+.chooseOven {
+    .controls {
+        margin-top: 120px;
+    }
+
+    button {
+        border: none;
+        text-align: left;
+        padding: 50px 50px 50px 100px;
+        min-height: 40px;
+        border-radius: 10px;
+        background: #888 url("./assets/oven.png") no-repeat 20px center;
+        background-size: 60px 60px;
+
+        margin-bottom: 20px;
+
+    }
+
+    #seeTimers {
+        background: #888 url("./assets/timer.png") no-repeat 20px center;
+        background-size: 60px 60px;
+    }
+
+}
+
+.ovenMain {
+    ul {
+        margin-top: 70px;
+    }
+    li {
+        text-align: left;
+        width: 80%;
+        margin: 30px auto;
+        padding: 20px;
+        background: #888;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+
+        .val {
+            position: absolute;
+            right: 0;
+            width: 20px;
+            cursor: pointer;
+            padding: 20px 40px;
+            top: 0;
+            text-align: center;
+            background: red;
+        }
+
+        &.on {
+            .val {
+                background: green;
+            }
+        }
+    }
+}
+
+.ovenHeater {
+    video {
+        margin-top: 50px;
+        width: 90%;
+        border-radius: 20px;
+    }
+
+    .temps {
+        width: 100%;
+        text-align: left;
+        margin: 10px 0;
+        position: relative;
+        background: #888;
+        padding: 7px 0;
+        border-radius: 6px;
+        overflow: hidden;
+
+        span:nth-of-type(1) {
+            padding-left: 50px;
+        }
+
+        span:nth-of-type(2) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: green;
+            width: 80px;
+            min-height: 33px;
+            padding-top: 7px;
+        }
+    }
+
+    .sliderHold {
+        position: relative;
+        min-height: 30px;
+        width: 90%;
+        margin: 0 auto;
+        height: 30px;
+    }
+
+    .sliderObjBg {
+        width: 100%;
+        border-radius: 5px;
+        background-color: #888;
+        height: 5px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    .sliderObj {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: orange;
+    }
+
+    .timerTitle {
+        margin: 30px 0 10px 0;
+    }
+
+    .time {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .addSecs {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        min-height: 40px;
+        grid-gap: 5px;
+
+        button {
+            border: none;
+            padding: 0;
+            border-radius: 25%;
+            width: 50px;
+            margin: 0 auto;
+            background: #666;
+        }
+    }
+
+    .timerControl {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        margin: 20px 0 10px;
+
+        button {
+            border: none;
+            padding: 0;
+            border-radius: 5px;
+            width: 100px;
+            min-height: 40px;
+            margin: 0 auto;
+            background: #666;
+
+            &:disabled.on {
+                background: green;
+            }
+
+            &:disabled {
+                background: red;
+            }
+        }
+    }
+
+    .ovenDoor {
+        width: 90%;
+        margin: 120px auto 0;
+        min-height: 40px;
+        background: #666;
+        border: none;
+        border-radius: 20px;
+
+
+        &.visible {
+            display: block;
+        }
+
+        &.hidden {
+            display: none;
+        }
+    }
+}
+
+.allTimers {
+
+    .allTimersTimer {
+        width: 100%;
+        border-radius: 6px;
+        margin-top: 30px;
+        background: #888;
+        overflow: hidden;
+
+        div:nth-of-type(1) {
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        div:nth-of-type(2) {
+            display: grid;
+            grid-template-columns: 120px 1fr 120px;
+            margin-top: 10px;
+
+            > * {
+                text-align: center;
+            }
+
+            span {
+                padding-top: 14px;
+            }
+
+            button {
+                border: none;
+                padding: 10px;
+                background: transparent;
+                color: #c10000;
+                font-weight: 700;
+                font-size: 20px;
+            }
+        }
+    }
+
+}
